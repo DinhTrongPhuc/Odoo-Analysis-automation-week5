@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment Settings
+    "module": "commonjs",
+    "target": "es2020",
+
+    // --- KHẮC PHỤC LỖI IMPORT EXPRESS ---
+    "esModuleInterop": true, // <-- THÊM DÒNG NÀY (Quan trọng nhất)
+    "allowSyntheticDefaultImports": true, // <-- THÊM DÒNG NÀY (Hỗ trợ import default)
+
+    // Khuyên dùng cho Node.js
+    "lib": ["es2020"],
+    "types": ["node"], // <-- NÊN BẬT (Sau khi chạy npm install -D @types/node)
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  },
+
+  // --- KHẮC PHỤC LỖI "No inputs were found" ---
+  "include": ["src/**/*"], // Chỉ định nơi chứa file code của bạn
+  "exclude": ["node_modules", "dist"] // Loại trừ các thư mục không cần biên dịch
+}
