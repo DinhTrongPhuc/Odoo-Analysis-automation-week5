@@ -32,20 +32,17 @@ const automation = new LoginAutomationService(
 
 function buildLoginDomain() {
   const keywords = TicketValidator.loginKeywords;
-
-  // Tạo danh sách các cặp điều kiện lọc cho cả Name và Description
   const conditions: any[] = [];
   keywords.forEach((word) => {
     conditions.push(["name", "ilike", word]);
     conditions.push(["description", "ilike", word]);
   });
 
-  // Số lượng dấu OR "|" cần thiết = (tổng số điều kiện) - 1
   const orOperators = Array(conditions.length - 1).fill("|");
 
   return [
     "&",
-    ["stage_id.name", "!=", "Solved"], // Điều kiện bắt buộc 1
+    ["stage_id.name", "!=", "Solved"],
     ...orOperators,
     ...conditions,
   ];
@@ -55,13 +52,12 @@ async function checkNewTickets() {
   try {
     logger.info("Checking new tickets...");
 
-    // Gọi hàm build domain động ở đây
     const loginDomain = buildLoginDomain();
 
     const tickets = await client.call(
       "helpdesk.ticket",
       "search_read",
-      [loginDomain], // Truyền domain vừa tạo vào đây
+      [loginDomain],
       {
         fields: [
           "id",
@@ -71,7 +67,7 @@ async function checkNewTickets() {
           "create_date",
           "stage_id",
         ],
-        limit: 20, // Tăng limit lên một chút vì có nhiều từ khóa
+        limit: 20, // Giới hạn số lượng ticket lấy về để tránh quá tải
         order: "create_date desc",
       },
     );

@@ -2,6 +2,7 @@ import { Ticket } from "../entities/Ticket";
 
 export class TicketValidator {
   public static readonly loginKeywords = [
+    // keywords liên quan đến login issue
     "login",
     "log in",
     "password",
@@ -13,12 +14,14 @@ export class TicketValidator {
     "mật khẩu",
     "không vào được",
     "ko vào được",
+    "không thể vào được",
     "không login",
     "ko login",
     "không vào",
     "account",
     "tài khoản",
     "lms",
+    "tsm",
   ];
 
   static isLoginIssue(ticket: Ticket): boolean {

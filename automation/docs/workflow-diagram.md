@@ -149,11 +149,3 @@
 **Nguyên nhân gốc:** Quy tắc tự động khoá tài khoản sau 30 ngày không hoạt động nằm ở tầng code. Automation này là giải pháp tạm thời trong khi team dev lên lịch sửa vĩnh viễn.
 
 ---
-
-## Cấu hình tích hợp Odoo
-
----
-
-## Scheduler dự phòng
-
----
