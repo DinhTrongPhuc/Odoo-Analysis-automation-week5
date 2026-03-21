@@ -8,13 +8,11 @@
     "module": "commonjs",
     "target": "es2020",
 
-    // --- KHẮC PHỤC LỖI IMPORT EXPRESS ---
-    "esModuleInterop": true, // <-- THÊM DÒNG NÀY (Quan trọng nhất)
-    "allowSyntheticDefaultImports": true, // <-- THÊM DÒNG NÀY (Hỗ trợ import default)
-
-    // Khuyên dùng cho Node.js
+    "esModuleInterop": true, 
+    "allowSyntheticDefaultImports": true, 
+    
     "lib": ["es2020"],
-    "types": ["node"], // <-- NÊN BẬT (Sau khi chạy npm install -D @types/node)
+    "types": ["node"], 
 
     // Other Outputs
     "sourceMap": true,
