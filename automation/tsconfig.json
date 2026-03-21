@@ -8,11 +8,11 @@
     "module": "commonjs",
     "target": "es2020",
 
-    "esModuleInterop": true, 
-    "allowSyntheticDefaultImports": true, 
-    
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
     "lib": ["es2020"],
-    "types": ["node"], 
+    "types": ["node"],
 
     // Other Outputs
     "sourceMap": true,
@@ -33,7 +33,6 @@
     "skipLibCheck": true
   },
 
-  // --- KHẮC PHỤC LỖI "No inputs were found" ---
-  "include": ["src/**/*"], // Chỉ định nơi chứa file code của bạn
-  "exclude": ["node_modules", "dist"] // Loại trừ các thư mục không cần biên dịch
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
